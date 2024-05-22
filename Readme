@@ -1,0 +1,38 @@
+Create project
+create: composer create-project laravel/laravel "name-project"
+run: php artisan serve
+---------------------
+Installation and setup module:
+create: php artisan module:make <module-name>
+- add controller
+php artisan module:make-controller AuthController Admin
+
+-----------
+extend
+session
+yield
+include
+-----
+* btvn
+ - san pham
+ - don hang
+- khach hang
+dang mnhap admin:
+de lại forgot
+l
+----------
+add db
+php artisan make:migration create_admins_table
+
+php artisan make:migration add_avatar_to_admin_table --table=admins
+
+
+php artisan make:model Admin
+ php artisan make:middleware AdminAuthenticate
+
+php artisan make:seeder AdminTableSeeder
+php artisan db:seed --class=UserTableSeeder
+composer dumpautoload
+-----
+* Validation
+* remember
