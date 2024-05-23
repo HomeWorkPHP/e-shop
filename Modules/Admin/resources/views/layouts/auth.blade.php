@@ -27,5 +27,9 @@
 <script src="{{asset('static/js/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('static/js/adminlte.min.js')}}"></script>
+<!-- Laravel Javascript Validation -->
+<script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
+
+@yield("extra-js")
 </body>
 </html>

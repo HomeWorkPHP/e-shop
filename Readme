@@ -1,38 +1,86 @@
 Create project
 create: composer create-project laravel/laravel "name-project"
 run: php artisan serve
----------------------
+
+---
+
 Installation and setup module:
 create: php artisan module:make <module-name>
-- add controller
-php artisan module:make-controller AuthController Admin
 
------------
+-   add controller
+    php artisan module:make-controller AuthController Admin
+
+---
+
 extend
 session
 yield
 include
------
-* btvn
- - san pham
- - don hang
-- khach hang
-dang mnhap admin:
-de lại forgot
-l
-----------
+
+---
+
+-   btvn
+
+*   san pham
+*   don hang
+*   khach hang
+    dang mnhap admin:
+    de lại forgot
+    l
+
+---
+
 add db
 php artisan make:migration create_admins_table
 
 php artisan make:migration add_avatar_to_admin_table --table=admins
 
-
 php artisan make:model Admin
- php artisan make:middleware AdminAuthenticate
+php artisan make:middleware AdminAuthenticate
 
 php artisan make:seeder AdminTableSeeder
 php artisan db:seed --class=UserTableSeeder
 composer dumpautoload
------
-* Validation
-* remember
+
+---
+
+-   Validation
+-   remember
+
+php artisan module:make-request SignInRequest Admin
+
+php artisan make:provider RepositoryServiceProvider
+
+php artisan module:make-request StoreAdminRequest Admin
+
+store them sua xoa admin
+
+//
+modified: Modules/Admin/App/Http/Controllers/AdminController.php
+modified: Modules/Admin/App/Http/Controllers/AuthController.php
+new file: Modules/Admin/App/Http/Requests/SignInRequest.php
+new file: Modules/Admin/App/Http/Requests/StoreAdminRequest.php
+modified: Modules/Admin/resources/views/components/footer.blade.php
+modified: Modules/Admin/resources/views/layouts/auth.blade.php
+modified: Modules/Admin/resources/views/layouts/header.blade.php
+modified: Modules/Admin/resources/views/pages/auth/login.blade.php
+modified: Readme
+new file: app/Providers/RepositoryServiceProvider.php
+new file: app/Repositories/Admin/AdminRepository.php
+new file: app/Repositories/Admin/AdminRepositoryInterface.php
+new file: app/Services/Admin/AdminService.php
+modified: app/Services/Admin/AuthService.php
+modified: composer.json
+modified: composer.lock
+modified: config/app.php
+new file: config/jsvalidation.php
+new file: demo.md
+new file: public/static/css/admin.css
+new file: public/vendor/jsvalidation/js/jsvalidation.js
+new file: public/vendor/jsvalidation/js/jsvalidation.js.map
+new file: public/vendor/jsvalidation/js/jsvalidation.min.js
+new file: public/vendor/jsvalidation/js/jsvalidation.min.js.map
+new file: resources/views/vendor/jsvalidation/bootstrap.php
+new file: resources/views/vendor/jsvalidation/bootstrap4.php
+new file: resources/views/vendor/jsvalidation/bootstrap5.php
+new file: resources/views/vendor/jsvalidation/uikit.php

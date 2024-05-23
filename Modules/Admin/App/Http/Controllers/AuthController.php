@@ -4,11 +4,13 @@ namespace Modules\Admin\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Services\Admin\AuthService;
+use Dotenv\Validator;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\MessageBag;
+use Modules\Admin\App\Http\Requests\SignInRequest;
 
 class AuthController extends Controller
 {
@@ -45,7 +47,7 @@ class AuthController extends Controller
             dd($e->getMessage());
         }
     }
-    public function loginPost(Request $request)
+    public function loginPost(SignInRequest $request)
     {
         try {
             if($this->authService->login($request->all())){
@@ -61,4 +63,5 @@ class AuthController extends Controller
             dd($e->getMessage());
         }
     }
+   
 }

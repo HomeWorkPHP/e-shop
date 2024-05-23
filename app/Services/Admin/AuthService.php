@@ -13,4 +13,5 @@ class AuthService
             'password' => $data['password']
         ]); !empty($data['remember']);//return true or false
     }
+    // write
 }

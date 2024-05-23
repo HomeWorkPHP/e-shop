@@ -11,4 +11,5 @@
     <link rel="stylesheet" href="{{ asset('static/css/fontawesome-free/css/all.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('static/css/adminlte.min.css')}}">
+    
 </head>

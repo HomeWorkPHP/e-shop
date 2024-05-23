@@ -3,12 +3,24 @@
 namespace Modules\Admin\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Repositories\Admin\AdminRepositoryInterface;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class AdminController extends Controller
 {
+    private $adminRepository;
+
+    public function __construct(AdminRepositoryInterface $adminRepository)
+    {
+        $this->adminRepository = $adminRepository;
+    }
+
+    public function store($data)
+    {
+        $this->adminRepository->store($data);
+    }
     /**
      * Display a listing of the resource.
      */
@@ -28,10 +40,10 @@ class AdminController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectResponse
-    {
-        //
-    }
+    // public function store(Request $request): RedirectResponse
+    // {
+    //     //
+    // }
 
     /**
      * Show the specified resource.
@@ -52,10 +64,10 @@ class AdminController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id): RedirectResponse
-    {
-        //
-    }
+    // public function update(Request $request, $id): RedirectResponse
+    // {
+    //     //
+    // }
 
     /**
      * Remove the specified resource from storage.

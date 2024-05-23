@@ -20,6 +20,10 @@
 <script src="{{asset('static/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('static/js/demo.js')}}"></script>
+
+<!-- Laravel Javascript Validation -->
+<script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
+
 <!-- Code injected by live-server -->
 <script>
     // <![CDATA[  <-- For SVG support
@@ -58,5 +62,6 @@
     }
     // ]]>
 </script>
+@yield("extra-js")
 </body>
 </html>
