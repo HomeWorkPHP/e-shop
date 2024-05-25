@@ -55,32 +55,3 @@ php artisan module:make-request StoreAdminRequest Admin
 
 store them sua xoa admin
 
-//
-modified: Modules/Admin/App/Http/Controllers/AdminController.php
-modified: Modules/Admin/App/Http/Controllers/AuthController.php
-new file: Modules/Admin/App/Http/Requests/SignInRequest.php
-new file: Modules/Admin/App/Http/Requests/StoreAdminRequest.php
-modified: Modules/Admin/resources/views/components/footer.blade.php
-modified: Modules/Admin/resources/views/layouts/auth.blade.php
-modified: Modules/Admin/resources/views/layouts/header.blade.php
-modified: Modules/Admin/resources/views/pages/auth/login.blade.php
-modified: Readme
-new file: app/Providers/RepositoryServiceProvider.php
-new file: app/Repositories/Admin/AdminRepository.php
-new file: app/Repositories/Admin/AdminRepositoryInterface.php
-new file: app/Services/Admin/AdminService.php
-modified: app/Services/Admin/AuthService.php
-modified: composer.json
-modified: composer.lock
-modified: config/app.php
-new file: config/jsvalidation.php
-new file: demo.md
-new file: public/static/css/admin.css
-new file: public/vendor/jsvalidation/js/jsvalidation.js
-new file: public/vendor/jsvalidation/js/jsvalidation.js.map
-new file: public/vendor/jsvalidation/js/jsvalidation.min.js
-new file: public/vendor/jsvalidation/js/jsvalidation.min.js.map
-new file: resources/views/vendor/jsvalidation/bootstrap.php
-new file: resources/views/vendor/jsvalidation/bootstrap4.php
-new file: resources/views/vendor/jsvalidation/bootstrap5.php
-new file: resources/views/vendor/jsvalidation/uikit.php

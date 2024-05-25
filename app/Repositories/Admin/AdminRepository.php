@@ -4,7 +4,7 @@ namespace App\Repositories\Admin;
 
 use App\Models\Admin;
 
-class AdminRepoitory implements AdminRepositoryInterface
+class AdminRepository implements AdminRepositoryInterface
 {
     private $adminModel;
     public function __construct(Admin $adminModel)
@@ -36,7 +36,7 @@ class AdminRepoitory implements AdminRepositoryInterface
     public function delete($id){
         return $this->adminModel->where('id', $id)->delete();
     }
-    
+
     public function get($id){
         return $this->adminModel->where('id', $id)->first();
 

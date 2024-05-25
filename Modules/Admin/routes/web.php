@@ -34,6 +34,15 @@ Route::group([], function () {
                 Route::get("create", [ProductController::class, "create"])->name("admin.product.create");
                 Route::get("edit/{id}", [ProductController::class, "edit"])->name("admin.product.edit");
             });
+
+            Route::prefix('profileAdmin')->group((function () {
+                Route::get("index", [AdminController::class, "index"])->name("admin.profileAdmin.index");
+                Route::get("create", [AdminController::class, "create"])->name("admin.profileAdmin.create");
+                Route::post("create", [AdminController::class, "store"])->name("admin.profileAdmin.store");
+                Route::get("edit", [AdminController::class, "edit"])->name("admin.profileAdmin.edit");
+                Route::get("delete/{id}", [AdminController::class, "destroy"])->name("admin.profileAdmin.delete");
+            }));
+
             Route::get('logout', [AuthController::class, "logout"])->name("admin.logout");
         });
     });

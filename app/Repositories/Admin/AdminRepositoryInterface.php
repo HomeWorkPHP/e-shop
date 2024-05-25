@@ -9,7 +9,7 @@ interface AdminRepositoryInterface
     public function update($data, $id);
 
     public function delete($id);
-    
+
     public function get($id);
 
     public function all();

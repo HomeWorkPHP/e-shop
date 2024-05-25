@@ -19,12 +19,8 @@
                 <form action="{{route('admin.login.post')}}" method="post" id="form-login">
                     @csrf
                     <div class="input-group mb-2">
-                        <input id="email"  value="{{old('email')}}" name="email" class="form-control" placeholder="Email">
-                        {{-- @if ($errors->get('email'))
-                            <span id="email-error" class="error invalid-feedback" style="display: block">
-                                {{ implode(", ",$errors->get('email')) }}
-                            </span>
-                        @endif --}}
+                        <input id="email"  value="{{old('email')}}" name="email" class="form-control" placeholder="Email"  >
+                        {{-- value="{{ $data['email'] }}" --}}
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -32,12 +28,7 @@
                         </div>
                     </div>
                     <div class="input-group md-2">
-                        <input id="pa ssword" type="password" name="password" class="form-control" placeholder="Password">
-                        {{-- @if ($errors->get('password'))
-                            <span id="password-error" class="error invalid-feedback" style="display: block">
-                                {{ implode(", ",$errors->get('password')) }}
-                            </span>
-                        @endif --}}
+                        <input id="password" type="password" name="password" class="form-control" placeholder="Password">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
