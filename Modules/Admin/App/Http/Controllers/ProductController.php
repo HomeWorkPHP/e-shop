@@ -2,20 +2,35 @@
 
 namespace Modules\Admin\App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
+use App\Services\Admin\ProductService;
+
 
 class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
+    private $productService;
+
+    public function __construct(ProductService $productService)
+    {
+        $this->productService = $productService;
+    }
+
     public function index()
     {
+        $products = $this->productService->getAll();
         try {
-            return view('admin::pages.product.index');
+            return view('admin::pages.product.index', compact('products'));
         }
         catch (\Exception $e) {
             dd($e->getMessage());
@@ -40,7 +55,15 @@ class ProductController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        //
+        // dd($request->all());
+        $productId = $this->productService->store($request->all());
+        try {
+            return  redirect()->route('admin.product.index')->with('success', 'Product created successfully');
+        }
+        catch (\Exception $e) {
+            dd($e->getMessage());
+        }
+        // thong bao them thang cong
     }
 
     /**
@@ -56,8 +79,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
+        $product = $this->productService->findById($id);
         try {
-            return view('admin::pages.product.edit');
+            return view('admin::pages.product.edit', compact('product'));
         }
         catch (\Exception $e) {
             dd($e->getMessage());
@@ -69,7 +93,12 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id): RedirectResponse
     {
-        //
+        $statusUpdate = $this->productService->update( $request->all(), $id);
+        if ($statusUpdate) {
+            return redirect()->back();
+        } else {
+            dd("Update Failed");
+        }
     }
 
     /**
@@ -77,6 +106,11 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $statusDelete = $this->productService->delete($id);
+        if ($statusDelete){
+            return redirect()->route('admin.product.index')->with('success', 'Product deleted successfully');
+        } else {
+            dd("Delete Failed");
+        }
     }
 }

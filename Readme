@@ -18,7 +18,6 @@ yield
 include
 
 ---
-
 -   btvn
 
 *   san pham
@@ -44,9 +43,9 @@ composer dumpautoload
 
 ---
 
--   Validation
+-   Validationu
 -   remember
-
+// request
 php artisan module:make-request SignInRequest Admin
 
 php artisan make:provider RepositoryServiceProvider
@@ -55,3 +54,7 @@ php artisan module:make-request StoreAdminRequest Admin
 
 store them sua xoa admin
 
++----
+ php artisan modul:make-request StoreProductRequest Admin
+ --------
+ Them sua xoa -> thong bao thanh cong

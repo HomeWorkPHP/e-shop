@@ -84,14 +84,13 @@
                                                                     class="btn btn-primary next-link__js">
                                                                     <i class="fas fa-edit"></i>
                                                                 </a>
-                                                                <form style="display: inline;"
-                                                                    action="http://127.0.0.1:8000/admin/staffs/delete"
+                                                                {{-- <form style="display: inline;" action="http://127.0.0.1:8000/admin/staffs/delete"
                                                                     method="POST" id="form-delete__js">
                                                                     <input type="hidden" name="_token"
                                                                         value="lCEcbGXgMSBIVc436c8GSbGbWtC40iCVUcYpdT2J">
                                                                     <input type="text" name="id" value="1"
                                                                         hidden="">
-                                                                </form>
+                                                                </form> --}}
                                                                 <button id="delete__js" class="btn btn-danger"
                                                                     url="http://127.0.0.1:8000/admin/staffs/delete">
                                                                     <i class="fas fa-trash"></i>

@@ -7,6 +7,7 @@ use App\Repositories\Admin\AdminRepository;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Symfony\Component\VarDumper\Caster\RedisCaster;
 
 class AdminController extends Controller
 {
@@ -20,14 +21,7 @@ class AdminController extends Controller
     public function store($data)
     {
         $this->adminRepository->store($data);
-        echo "Success create";
-        try {
-            return view('admin::pages.profileAdmin.create');
-
-        }
-        catch (\Exception $e) {
-            dd($e->getMessage());
-        }
+        // return redirect()->roure("")
     }
     /**
      * Display a listing of the resource.

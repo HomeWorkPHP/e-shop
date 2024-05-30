@@ -19,7 +19,8 @@
                                 </div>
                             </div>
                             <!--card-body -->
-                            <form action="{{ route('admin.profileAdmin.store') }}" method="post" id="store">
+                            <form action="{{ route('admin.profileAdmin.update', $admin->id) }}" method="post"
+                                id="store">
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group col-12">

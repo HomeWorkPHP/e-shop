@@ -16,4 +16,13 @@ class AdminService
     {
         $this->adminRepository->store($data);
     }
+    public function findByID($id){
+        // return $this->adminRepository->find($id);
+    }
+    public function update($id, $data){}
+
+    public function delete()
+    {
+        // $this->adminRepository->delete();
+    }
 }

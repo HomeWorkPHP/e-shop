@@ -60,6 +60,7 @@
                                 </div>
                             </div>
                             <div class="card-header text-center">
+                                <input type="submit">
                                 <button class="btn btn-success">Thêm Mới</button>
                                 <a href="http://127.0.0.1:8000/admin/staffs" class="btn btn-danger next-link__js">Hủy</a>
                             </div>
